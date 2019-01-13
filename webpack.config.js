@@ -53,7 +53,10 @@ const productionConfig = merge([
 ]);
 
 const developmentConfig = merge([
-  parts.devServer(),
+  parts.devServer({
+    host: process.env.HOST || '0.0.0.0',
+    port: process.env.PORT
+  }),
   parts.loadCSS(),
   parts.generateSourceMaps({ type: 'eval-source-map' }),
   parts.loadJavaScript({

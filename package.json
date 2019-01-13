@@ -9,7 +9,8 @@
     "build:stats": "webpack --env production --json > stats.json",
     "lint": "eslint src",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --hot --env development\"",
-    "test": "jest"
+    "test": "jest",
+    "test:lint": "eslint src && jest"
   },
   "dependencies": {
     "react": "^16.7.0",
