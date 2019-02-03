@@ -8,9 +8,11 @@
     "build": "webpack --env production",
     "build:stats": "webpack --env production --json > stats.json",
     "lint": "eslint src",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql)\"",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --hot --env development\"",
     "test": "jest",
-    "test:lint": "eslint src && jest"
+    "test:lint": "yarn lint && yarn test",
+    "validate": "yarn lint && yarn prettier --list-different"
   },
   "dependencies": {
     "react": "^16.7.0",
