@@ -24,7 +24,9 @@ const productionConfig = merge([
   parts.clean(PATHS.build),
   parts.extractCSS({ use: 'css-loader' }),
   parts.generateSourceMaps({ type: 'source-map' }),
-  parts.loadJavaScript(),
+  parts.loadJavaScript({
+    exclude: /node_modules/
+  }),
   parts.minifyCSS({
     options: {
       discardComments: {
